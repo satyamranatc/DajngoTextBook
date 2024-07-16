@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Course.css' %}">
+    <title>TextBook - Science Courses</title>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <h2>TextBook</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="#">Generals</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+            <div class="cta-button">
+                <a href="#" class="btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <nav id="CourseNav" class="course-nav">
+        <div class="filter-dropdown">
+            <select>
+                <option>All Categories</option>
+                <option>Physics</option>
+                <option>Chemistry</option>
+                <option>Biology</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="filter-checkbox">
+            <input type="checkbox" id="paid-courses">
+            <label for="paid-courses">Paid Courses Only</label>
+        </div>
+
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search courses...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="courses-header">Explore Our Science Courses</h1>
+        <div class="course-grid">
+            {% for i in AllCourses %}
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="{{ i.course_poster }}" alt="{{ i.course_name }}">
+                </div>
+                <div class="course-content">
+                    <h2>{{ i.course_name }}</h2>
+                    <p class="course-description">{{ i.course_description }}</p>
+                    <div class="course-meta">
+                        <span class="duration"><i class="far fa-clock"></i> {{ i.course_duration }} hours</span>
+                        <span class="instructor"><i class="fas fa-chalkboard-teacher"></i>
+                            {{i.course_instructor}}</span>
+                    </div>
+                    <div class="course-footer">
+                        <div class="rating">
+                            <span class="stars">
+                                {% for star in i.course_rating|stringformat:"s"|slice:":3" %}
+                                <i class="fas fa-star"></i>
+                                {% endfor %}
+                            </span>
+                            <span class="review-count">({{ i.course_reviews }} reviews)</span>
+                        </div>
+                        <div class="price">
+                            {% if i.isPaid %}
+                            <span>${{ i.course_price }}</span>
+                            {% else %}
+                            <span class="free">Free</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <a href="" class="btn btn-learn-more">Learn More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>TextBook is your gateway to scientific knowledge and discovery.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: info@textbook.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TextBook. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

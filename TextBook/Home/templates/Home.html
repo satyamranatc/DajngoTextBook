@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Home.css' %}">
+    <title>TextBook - Science Courses</title>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h2>TextBook</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="#">Generals</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+            <div class="cta-button">
+                <a href="#" class="btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Discover the World of Science</h1>
+                <p>Explore our wide range of science courses and take your knowledge to the next level.</p>
+                <a href="#" class="btn btn-large">Browse Courses</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-atom"></i>
+                <h3>Physics</h3>
+                <p>Unravel the mysteries of the universe.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-dna"></i>
+                <h3>Biology</h3>
+                <p>Explore the wonders of life.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-flask"></i>
+                <h3>Chemistry</h3>
+                <p>Discover the building blocks of matter.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>TextBook is your gateway to scientific knowledge and discovery.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: info@textbook.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TextBook. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
